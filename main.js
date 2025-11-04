@@ -1,5 +1,8 @@
 'use strict'
 
+let humanScore = 0;
+let computerScore = 0;
+
 function getComputerhoice() {
   //computerがランダム数値を返す
   let randomScore = Math.random();
@@ -20,4 +23,10 @@ function getComputerhoice() {
   }
 }
 
-console.log(getComputerhoice())
+function getHumanChoice(humanChoice) {
+  return humanChoice;
+}
+//human の選択を表示
+console.log(getHumanChoice(prompt()));
+//computer の選択を表示
+console.log(getComputerhoice());
