@@ -19,6 +19,16 @@ document.body.appendChild(resultDiv);
 
 function updateScore () {
   scoreDiv.textContent = `score: human: ${humanScore} computer: ${computerScore}`
+  const winnerDiv = document.createElement("div");
+  if (humanScore === 5) {
+  winnerDiv.textContent = "human is winner!"
+  document.body.appendChild(winnerDiv);
+  }
+  else if (computerScore === 5) {
+    winnerDiv.textContent = "computer is winner!"
+    document.body.appendChild(winnerDiv);
+  }
+  else {}
 }
 
 //click rockButton
@@ -69,8 +79,6 @@ function getComputerChoice() {
     return "paper";
   }
 }
-
-
 
 //1ラウンドの戦い
 function playRound (humanChoice, computerChoice) {
