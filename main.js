@@ -21,7 +21,15 @@ document.body.appendChild(resultDiv);
 rockButton.addEventListener("click", () => { 
   const result = playRound("rock", getComputerChoice());
   resultDiv.textContent = result
+  scoreDiv.textContent = `score: human: ${humanScore} computer: ${computerScore}`
 });
+
+//create score
+let humanScore = 0;
+let computerScore = 0;
+const scoreDiv = document.createElement("div")
+document.body.appendChild(scoreDiv);
+scoreDiv.textContent = `score: human: ${humanScore} computer: ${computerScore}`
 
 //computerの値
 function getComputerChoice() {
@@ -44,9 +52,7 @@ function getComputerChoice() {
   }
 }
 
-//初期スコア
-let humanScore = 0;
-let computerScore = 0;
+
 
 //1ラウンドの戦い
 function playRound (humanChoice, computerChoice) {
