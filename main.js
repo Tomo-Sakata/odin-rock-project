@@ -14,16 +14,13 @@ document.body.appendChild(scissorsButton);
 document.body.appendChild(paperButton);
 
 //create result
-const newDiv = document.createElement("div");
-const newContent = document.createTextNode("result");
-
-newDiv.appendChild(newContent);
-document.body.appendChild(newDiv);
+const resultDiv = document.createElement("div");
+document.body.appendChild(resultDiv);
 
 //click rockButton
 rockButton.addEventListener("click", () => { 
   const result = playRound("rock", getComputerChoice());
-  console.log(result);
+  resultDiv.textContent = result
 });
 
 //computerの値
