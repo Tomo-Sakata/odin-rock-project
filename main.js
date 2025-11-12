@@ -20,6 +20,12 @@ const newContent = document.createTextNode("result");
 newDiv.appendChild(newContent);
 document.body.appendChild(newDiv);
 
+//click rockButton
+rockButton.addEventListener("click", () => { 
+  const result = playRound("rock", getComputerChoice());
+  console.log(result);
+});
+
 //computerの値
 function getComputerChoice() {
   //computerがランダム数値を返す
@@ -39,11 +45,6 @@ function getComputerChoice() {
   else {
     return "paper";
   }
-}
-//humanの値
-function getHumanChoice(humanChoice) {
-  let humanChoiceLower = humanChoice.toLowerCase();
-  return humanChoiceLower;
 }
 
 //初期スコア
@@ -77,19 +78,19 @@ else
     } 
 }
 
-//playRoundを呼ぶ
-function startGame () {
-    const humanSelection = getHumanChoice(prompt("battle"));
-    const computerSelection = getComputerChoice();
-    console.log(playRound(humanSelection, computerSelection));
+// //playRoundを呼ぶ
+// function startGame () {
+//     const humanSelection = getHumanChoice(prompt("battle"));
+//     const computerSelection = getComputerChoice();
+//     console.log(playRound(humanSelection, computerSelection));
 
-  if (humanScore > computerScore) {
-    console.log("human is winner!");
-  }
-  else if (humanScore < computerScore) {
-    console.log("computer is winner!");
-  }
-  else {
-    console.log("draw!");
-  }
-}
+//   if (humanScore > computerScore) {
+//     console.log("human is winner!");
+//   }
+//   else if (humanScore < computerScore) {
+//     console.log("computer is winner!");
+//   }
+//   else {
+//     console.log("draw!");
+//   }
+// }
