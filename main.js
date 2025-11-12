@@ -23,12 +23,21 @@ function updateScore () {
   if (humanScore === 5) {
   winnerDiv.textContent = "human is winner!"
   document.body.appendChild(winnerDiv);
+  stopGame();
   }
   else if (computerScore === 5) {
     winnerDiv.textContent = "computer is winner!"
     document.body.appendChild(winnerDiv);
+    stopGame();
   }
   else {}
+}
+
+//stop the game
+function stopGame() { 
+  rockButton.disabled = true;
+  scissorsButton.disabled = true;
+  paperButton.disabled = true;
 }
 
 //click rockButton
@@ -106,20 +115,3 @@ else
       return "It's a draw!"
     } 
 }
-
-// //playRoundを呼ぶ
-// function startGame () {
-//     const humanSelection = getHumanChoice(prompt("battle"));
-//     const computerSelection = getComputerChoice();
-//     console.log(playRound(humanSelection, computerSelection));
-
-//   if (humanScore > computerScore) {
-//     console.log("human is winner!");
-//   }
-//   else if (humanScore < computerScore) {
-//     console.log("computer is winner!");
-//   }
-//   else {
-//     console.log("draw!");
-//   }
-// }
