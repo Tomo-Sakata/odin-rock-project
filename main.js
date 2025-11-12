@@ -17,11 +17,29 @@ document.body.appendChild(paperButton);
 const resultDiv = document.createElement("div");
 document.body.appendChild(resultDiv);
 
+function updateScore () {
+  scoreDiv.textContent = `score: human: ${humanScore} computer: ${computerScore}`
+}
+
 //click rockButton
 rockButton.addEventListener("click", () => { 
   const result = playRound("rock", getComputerChoice());
   resultDiv.textContent = result
-  scoreDiv.textContent = `score: human: ${humanScore} computer: ${computerScore}`
+  updateScore();
+});
+
+//click scissorsButton
+scissorsButton.addEventListener("click", () => { 
+  const result = playRound("scissors", getComputerChoice());
+  resultDiv.textContent = result
+  updateScore();
+});
+
+//click paperButton
+paperButton.addEventListener("click", () => { 
+  const result = playRound("paper", getComputerChoice());
+  resultDiv.textContent = result
+  updateScore();
 });
 
 //create score
