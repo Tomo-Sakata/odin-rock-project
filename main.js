@@ -1,17 +1,14 @@
 'use strict'
 
 //create buttons
-const startButton = document.createElement("button");
 const rockButton = document.createElement("button");
 const scissorsButton = document.createElement("button");
 const paperButton = document.createElement("button");
 
-startButton.textContent = "start";
 rockButton.textContent = "rock";
 scissorsButton.textContent = "scissors";
 paperButton.textContent = "paper";
 
-document.body.appendChild(startButton);
 document.body.appendChild(rockButton);
 document.body.appendChild(scissorsButton);
 document.body.appendChild(paperButton);
@@ -22,11 +19,6 @@ const newContent = document.createTextNode("result");
 
 newDiv.appendChild(newContent);
 document.body.appendChild(newDiv);
-
-startButton.addEventListener("click", (e) => {
-  e.preventDefault;
-  startGame();
-});
 
 //computerの値
 function getComputerChoice() {
@@ -66,7 +58,7 @@ if (humanChoice === "rock" && computerChoice === "paper" ||
     humanChoice === "paper" && computerChoice === "scissors") 
     {
     //computerに1点
-    computerScore += 1;s
+    computerScore += 1;
     return `You lose! ${computerChoice} beats ${humanChoice}`;
     }
 //human勝利
